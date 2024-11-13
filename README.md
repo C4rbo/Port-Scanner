@@ -1,50 +1,53 @@
-
 # Port Scanner
 
-An port scanner written in Python, designed for educational and authorized security testing purposes. This tool can scan both TCP and UDP ports, identify services, and check for known vulnerabilities using service banners.
+A simple port scanner written in Python, designed for educational and authorized security testing purposes. This tool can scan a range of TCP ports and display the open ones.
 
 ## Features
 
 - **Multi-threaded Scanning**: Efficient and fast scanning with multi-threading support.
-- **Extended Banner Grabbing**: Uses multiple methods to grab banners for more accurate service detection.
-- **Service Identification**: Identifies services running on open ports using standard ports and protocol data.
-- **Vulnerability Detection**: Checks for potential vulnerabilities based on service version banners.
-- **Custom Timeouts**: Separate configurable timeouts for TCP and UDP scans.
-- **DNS Resolution**: Resolves IP addresses to domain names when available.
-- **Result Saving**: Saves scan results to a text file for further analysis.
+- **Port Scanning**: Scans a range of TCP ports (1-10000 by default).
+- **Custom Timeouts**: Configurable timeout for each connection attempt.
+- **Result Display**: Lists open ports in a clear format.
+- **Simple Usage**: Easy to use from the command line with minimal configuration.
 
 ## Installation
 
 To get started, clone the repository and navigate into the project directory:
 
 ```bash
-git clone https://github.com/yourusername/advanced-port-scanner.git
-cd advanced-port-scanner
+git clone https://github.com/C4rbo/port-scanner.git
+cd port-scanner
 ```
 
 This project relies solely on Python's standard libraries, so no additional dependencies are required.
 
 ## Usage
 
-Run the script using Python 3. You'll be prompted to enter the target IP address and the range of ports you want to scan.
+Run the script using Python 3. You will need to provide the target IP address and the timeout (in seconds) for the connection attempt.
+
+### Command Line
 
 ```bash
-python scanner.py
+python3 main.py <ip_address> <timeout_in_seconds>
 ```
-
-### Inputs
-
-- **Target IP Address**: The IP address of the machine you want to scan.
-- **Port Range**: The range of ports to scan, specified in the format `start-end` (e.g., `1-1024`).
 
 ### Example
 
-```
-Enter target IP address: 192.168.1.1
-Enter port range (e.g., 1-1024): 20-80
+```bash
+python3 main.py 192.168.1.1 1
 ```
 
-The script will output the status of each port, including whether it is open, the service name (if identifiable), any banner information, and known vulnerabilities related to the service. Results will also be saved to a file named `scan_results_<ip>_<start_port>-<end_port>.txt`.
+In this example, the script will scan the ports on the target IP `192.168.1.1` with a timeout of 1 second for each connection attempt.
+
+### Bash Script
+
+Alternatively, you can use the provided Bash script to interactively input the IP address and timeout value:
+
+```bash
+./scan_ports.sh
+```
+
+This will prompt you for the IP address and timeout, and then run the Python scanner.
 
 ## Legal Disclaimer
 
