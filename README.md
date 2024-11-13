@@ -1,6 +1,6 @@
 # Port Scanner
 
-A simple port scanner written in Python, designed for educational and authorized security testing purposes. This tool can scan a range of TCP ports and display the open ones.
+A simple port scanner written in Bash and Python, designed for educational and authorized security testing purposes. This tool can scan a range of TCP ports and display the open ones.
 
 ## Features
 
