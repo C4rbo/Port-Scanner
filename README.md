@@ -1,6 +1,6 @@
 # Port Scanner
 
-A simple port scanner written in Bash and Python, designed for educational and authorized security testing purposes. This tool can scan a range of TCP ports and display the open ones.
+A simple port scanner written in Python, designed for educational and authorized security testing purposes. This tool can scan a range of TCP ports and display the open ones.
 
 ## Features
 
@@ -23,31 +23,29 @@ This project relies solely on Python's standard libraries, so no additional depe
 
 ## Usage
 
-Run the script using Python 3. You will need to provide the target IP address and the timeout (in seconds) for the connection attempt.
+Run the provided Bash script to interactively input the target IP address and the timeout value. The Python script will handle the port scanning based on the input from the Bash script.
 
-### Command Line
+### Bash Script
 
 ```bash
-python3 main.py <ip_address> <timeout_in_seconds>
+./index.sh
 ```
+
+This will prompt you to enter the IP address you want to scan and the timeout value for each connection attempt. The script will then call the Python script to perform the port scan.
 
 ### Example
 
 ```bash
-python3 main.py 192.168.1.1 1
+Hey user, insert the IP that you want me to scan: 
+192.168.1.1
+How many seconds the socket is going to wait until timeout: 
+1
+Waiting for the scan...
+
+$Result
 ```
 
-In this example, the script will scan the ports on the target IP `192.168.1.1` with a timeout of 1 second for each connection attempt.
-
-### Bash Script
-
-Alternatively, you can use the provided Bash script to interactively input the IP address and timeout value:
-
-```bash
-./scan_ports.sh
-```
-
-This will prompt you for the IP address and timeout, and then run the Python scanner.
+The Python script will scan the ports on the target IP `192.168.1.1` with a timeout of 1 second for each connection attempt, and the open ports will be displayed.
 
 ## Legal Disclaimer
 
